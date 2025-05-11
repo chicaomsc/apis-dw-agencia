@@ -38,7 +38,7 @@ describe("Lead API", () => {
     expect(res.text).toContain("dw agencia");
   });
 
-  it("POST /api/leads - deve criar um lead", async () => {
+  it("POST /api/users - deve criar um lead", async () => {
     const leadData = {
       name: "Chicão Teste",
       phone: "999999999",
@@ -46,7 +46,7 @@ describe("Lead API", () => {
       client_id: clientId,
     };
 
-    const res = await request(app).post("/api/leads").send(leadData);
+    const res = await request(app).post("/api/users").send(leadData);
 
     expect(res.status).toBe(201);
     expect(res.body).toHaveProperty("id");
